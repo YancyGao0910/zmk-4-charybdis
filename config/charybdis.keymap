@@ -1,5 +1,4 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -16,7 +15,7 @@
             compatible = "zmk,behavior-macro";
             label = "To1_macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,50) &to 4>;
+            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,50) &to 0>;
         };
 
         To0_macro: To0_macro {
@@ -46,13 +45,51 @@
         };
     };
 
+    behaviors {
+        JN2: JN2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "JN2";
+            bindings = <&kp N2>, <&kp DQT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        JN6: JN6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "JN6";
+            bindings = <&kp N6>, <&kp AMPS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        JN7: JN7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "JN7";
+            bindings = <&kp N7>, <&kp SQT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        JN_min2und: JN_min2und {
+            compatible = "zmk,behavior-mod-morph";
+            label = "JN_MIN2UND";
+            bindings = <&kp EQUAL>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        L0 {
             bindings = <
 &kp LEFT_ALT    &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F        &kp W      &kp R  &kp Y  &kp P  &kp RIGHT_ALT
-&kp LCTRL       &kp E  &kp I  &kp A         &kp O      &kp MINUS      &kp K        &kp T      &kp N  &kp S  &kp H  &kp RCTRL
+&kp LCTRL       &kp E  &kp I  &kp A         &kp O      &JN_min2und    &kp K        &kp T      &kp N  &kp S  &kp H  &kp RCTRL
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G        &kp D      &kp M  &kp J  &kp B  &kp RIGHT_SHIFT
                               &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 4 SPACE  &lt 3 F14
             >;
@@ -60,48 +97,48 @@
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        layer_1 {
+        L1_mouse {
             bindings = <
-&none         &none         &none         &none         &none         &none    &kp DEL  &kp BACKSPACE  &kp UP_ARROW  &kp ENTER        &kp B     &kp V
-&bt BT_CLR    &none         &none         &none         &none         &none    &kp ESC  &mkp MB1       &mkp MB2      &kp RIGHT_ARROW  &kp S     &kp W
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 0  &none    &kp Z    &kp A          &kp D         &kp S            &kp CAPS  &kp LCTRL
-                                          &none         &none         &none    &none    &kp ENTER
+&kp LALT   &kp LC(Y)     &kp PG_UP  &kp UP      &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &kp LC(Z)     &kp HOME   &kp LC(N1)  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
+                                    &none       &none      &none            &kp ESC     &kp ENTER
             >;
         };
 
-        layer_2 {
+        L2L_num {
             bindings = <
-&kp CAPS   &kp LS(LBRC)   &kp LS(PLUS)  &kp LS(AMPS)   &kp MINUS   &kp LS(RBRC)         &kp F   &kp N7  &kp N8  &kp N9  &kp SEMI   &none
-&kp LSHFT  &kp LBKT       &kp LS(N8)    &kp LS(EQUAL)  &kp LS(N9)  &kp RBKT             &kp N1  &kp N4  &kp N5  &kp N6  &kp N0     &kp SPACE
-&kp N7     &kp LS(POUND)  &kp LS(STAR)  &kp CARET      &kp FSLH    &kp DOUBLE_QUOTES    &kp N6  &kp N1  &kp N2  &kp N3  &kp COLON  &kp RCTRL
-                                        &kp F11        &kp F12     &none                &none   &none
+&kp LALT    &kp LBRC  &kp PLUS              &kp AMPERSAND   &kp MINUS              &kp RIGHT_BRACE    &kp PRCNT  &JN7     &kp N8  &kp N9  &kp SEMI   &kp RIGHT_ALT
+&kp LCTRL   &kp LBKT  &kp LEFT_PARENTHESIS  &kp EQUAL       &kp RIGHT_PARENTHESIS  &kp RBKT           &kp DLLR   &kp N4   &kp N5  &JN6    &kp N0     &kp RCTRL
+&kp RSHIFT  &kp HASH  &kp ASTRK             &kp CARET       &kp FSLH               &kp EXCL           &kp AT     &kp N1   &JN2    &kp N3  &kp COLON  &kp RSHFT
+                                            &studio_unlock  &none                  &none              &kp SPACE  &kp F16
             >;
         };
 
-        layer_3 {
+        L3_fun {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &kp BSPC  &kp DEL    &kp CAPS  &none
+&kp LALT   &kp F12  &kp F7  &kp F8        &kp F9    &kp A      &kp LG(UP)        &kp PG_UP  &kp UP    &kp PG_DN  &kp LG(DOWN)       &kp RALT
+&kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &kp A      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
+&kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &kp A      &kp LG(LEFT)      &kp HOME   &trans    &kp END    &kp LG(RIGHT)      &kp RSHFT
+                            &kp LEFT_ALT  &kp BSPC  &kp DEL    &kp CAPS          &none
             >;
         };
 
-        layer_4 {
+        L2R_num {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&kp LALT    &kp LBRC  &kp PLUS              &kp AMPERSAND  &kp MINUS              &kp RIGHT_BRACE    &kp PRCNT  &JN7    &kp N8  &kp N9  &kp SEMI   &kp RIGHT_ALT
+&kp LCTRL   &kp LBKT  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp RIGHT_PARENTHESIS  &kp RBKT           &kp DLLR   &kp N4  &kp N5  &JN6    &kp N0     &kp RCTRL
+&kp RSHIFT  &kp HASH  &kp ASTRK             &kp CARET      &kp FSLH               &kp EXCL           &kp AT     &kp N1  &JN2    &kp N3  &kp COLON  &kp RSHFT
+                                            &kp LEFT_ALT   &kp F15                &kp SPACE          &none      &none
             >;
         };
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
+&trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp A   &kp FSLH  &kp EXCL  &kp QMARK  &trans    &trans  &kp A   &kp A   &kp A   &kp A   &trans
+&trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                          &trans    &trans     &trans    &trans  &trans
             >;
         };
 
