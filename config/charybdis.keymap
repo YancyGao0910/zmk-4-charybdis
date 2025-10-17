@@ -13,7 +13,7 @@
 #define JP_AST          DOUBLE_QUOTES     // *
 #define JP_BQT          LEFT_BRACE        // `
 #define JP_UND          LS(0x87)          // _
-#define JP_LBRC         RIGHT_BRACKET     // [
+#define JP_LBKT         RIGHT_BRACKET     // [
 #define JP_RBKT         BACKSLASH         // ]
 #define JP_LPRN         ASTERISK          // (
 #define JP_RPRN         LEFT_PARENTHESIS  // )
