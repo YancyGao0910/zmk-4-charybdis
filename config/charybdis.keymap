@@ -1,24 +1,24 @@
 // OS設定を日本語キーボードのまま使用するための変換定義
-#define JP_DQUOTE       AT                // "
-#define JP_AMPERSAND    CARET             // &
-#define JP_QUOTE        AMPERSAND         // '
-#define JP_EQUAL        UNDER             // =
-#define JP_CARET        EQUAL             // ^
+#define JP_DQT          AT                // "
+#define JP_AND          CARET             // &
+#define JP_SQT          AMPERSAND         // '
+#define JP_EQL          UNDER             // =
+#define JP_CRT          EQUAL             // ^
 #define JP_YEN          0x89              // ¥
-#define JP_PLUS         COLON             // +
-#define JP_TILDE        PLUS              // ~
-#define JP_PIPE         LS(0x89)          // |
+#define JP_PLS          COLON             // +
+#define JP_TLE          PLUS              // ~
+#define JP_PPE          LS(0x89)          // |
 #define JP_AT           LEFT_BRACKET      // @
-#define JP_COLON        SINGLE_QUOTE      // :
-#define JP_ASTERISK     DOUBLE_QUOTES     // *
-#define JP_BACKQUOTE    LEFT_BRACE        // `
-#define JP_UNDERSCORE   LS(0x87)          // _
-#define JP_LBRACKET     RIGHT_BRACKET     // [
-#define JP_RBRACKET     BACKSLASH         // ]
-#define JP_LPAREN       ASTERISK          // (
-#define JP_RPAREN       LEFT_PARENTHESIS  // )
-#define JP_LBRACE       RIGHT_BRACE       // {
-#define JP_RBRACE       PIPE              // }
+#define JP_CLN          SINGLE_QUOTE      // :
+#define JP_AST          DOUBLE_QUOTES     // *
+#define JP_BQT          LEFT_BRACE        // `
+#define JP_UND          LS(0x87)          // _
+#define JP_LBRC         RIGHT_BRACKET     // [
+#define JP_RBKT         BACKSLASH         // ]
+#define JP_LPRN         ASTERISK          // (
+#define JP_RPRN         LEFT_PARENTHESIS  // )
+#define JP_LBRC         RIGHT_BRACE       // {
+#define JP_RBRC         PIPE              // }
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
@@ -71,28 +71,10 @@
     };
 
     behaviors {
-        JN2: JN2 {
+        JN_SMIN2UND: JN_SMIN2UND {
             compatible = "zmk,behavior-mod-morph";
-            label = "JN2";
-            bindings = <&kp N2>, <&kp DQT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        JN6: JN6 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "JN6";
-            bindings = <&kp N6>, <&kp AMPS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        JN7: JN7 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "JN7";
-            bindings = <&kp N7>, <&kp SQT>;
+            label = "JN_SMIN2UND";
+            bindings = <&kp MINUS>, <&kp JP_UND>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -104,9 +86,9 @@
 
         L0 {
             bindings = <
-&kp TAB         &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RIGHT_ALT
-&kp LCTRL       &kp E  &kp I  &kp A         &kp O      &kp MINUS      &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G      &kp D      &kp M  &kp J  &kp B  &kp RIGHT_SHIFT
+&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RALT
+&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND   &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G      &kp D      &kp M  &kp J  &kp B  &kp RSHIFT
                               &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 3 TAB  &lt 4 F14
             >;
 
@@ -115,7 +97,7 @@
 
         L1_mouse {
             bindings = <
-&kp LALT   &kp LC(Y)     &kp PG_UP  &kp UP      &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
+&kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP      &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
 &kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
 &kp LSHFT  &kp LC(Z)     &kp HOME   &kp LC(N1)  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
                                     &none       &none      &none            &kp ESC     &kp ENTER
@@ -124,19 +106,19 @@
 
         L2L_num {
             bindings = <
-&kp LALT    &kp LBRC  &kp PLUS              &kp AMPERSAND   &kp MINUS              &kp RIGHT_BRACE    &kp PRCNT  &JN7     &kp N8  &kp N9  &kp SEMI   &kp RIGHT_ALT
-&kp LCTRL   &kp LBKT  &kp LEFT_PARENTHESIS  &kp EQUAL       &kp RIGHT_PARENTHESIS  &kp RBKT           &kp DLLR   &kp N4   &kp N5  &JN6    &kp N0     &kp RCTRL
-&kp RSHIFT  &kp HASH  &kp ASTRK             &kp CARET       &kp FSLH               &kp EXCL           &kp AT     &kp N1   &JN2    &kp N3  &kp COLON  &kp RSHFT
-                                            &studio_unlock  &none                  &none              &kp SPACE  &kp F16
+&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND  &kp MINUS    &kp JP_RBRC  &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL  &kp JP_RPRN  &kp JP_RBKT  &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT  &kp FSLH     &kp EXCL     &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                    &studio_unlock  &none                  &none              &kp SPACE  &kp F16
             >;
         };
 
         L2R_num {
             bindings = <
-&kp LALT    &kp LBRC  &kp PLUS              &kp AMPERSAND  &kp MINUS              &kp RIGHT_BRACE    &kp PRCNT  &JN7    &kp N8  &kp N9  &kp SEMI   &kp RIGHT_ALT
-&kp LCTRL   &kp LBKT  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp RIGHT_PARENTHESIS  &kp RBKT           &kp DLLR   &kp N4  &kp N5  &JN6    &kp N0     &kp RCTRL
-&kp RSHIFT  &kp HASH  &kp ASTRK             &kp CARET      &kp FSLH               &kp EXCL           &kp AT     &kp N1  &JN2    &kp N3  &kp COLON  &kp RSHFT
-                                            &kp LEFT_ALT   &kp F15                &kp SPACE          &none      &none
+&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND  &kp MINUS    &kp JP_RBRC  &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL  &kp JP_RPRN  &kp JP_RBKT  &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT  &kp FSLH     &kp EXCL     &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                    &kp LEFT_ALT   &kp F15                &kp SPACE          &none      &none
             >;
         };
 
