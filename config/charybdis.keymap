@@ -72,15 +72,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        JN_min2und: JN_min2und {
-            compatible = "zmk,behavior-mod-morph";
-            label = "JN_MIN2UND";
-            bindings = <&kp EQUAL>, <&kp UNDER>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     keymap {
@@ -89,7 +80,7 @@
         L0 {
             bindings = <
 &kp LEFT_ALT    &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RIGHT_ALT
-&kp LCTRL       &kp E  &kp I  &kp A         &kp O      &JN_min2und    &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
+&kp LCTRL       &kp E  &kp I  &kp A         &kp O      &kp MINUS      &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G      &kp D      &kp M  &kp J  &kp B  &kp RIGHT_SHIFT
                               &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 4 TAB  &lt 3 F14
             >;
