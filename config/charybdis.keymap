@@ -79,10 +79,10 @@
 
         L0 {
             bindings = <
-&kp LEFT_ALT    &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RIGHT_ALT
+&kp TAB         &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RIGHT_ALT
 &kp LCTRL       &kp E  &kp I  &kp A         &kp O      &kp MINUS      &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G      &kp D      &kp M  &kp J  &kp B  &kp RIGHT_SHIFT
-                              &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 4 TAB  &lt 3 F14
+                              &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 3 TAB  &lt 4 F14
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -106,21 +106,21 @@
             >;
         };
 
-        L3_fun {
-            bindings = <
-&kp LALT   &kp F12  &kp F7  &kp F8        &kp F9    &kp A      &kp LG(UP)        &kp PG_UP  &kp UP    &kp PG_DN  &kp LG(DOWN)       &kp RALT
-&kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &kp A      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
-&kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &kp A      &kp LG(LEFT)      &kp HOME   &trans    &kp END    &kp LG(RIGHT)      &kp RSHFT
-                            &kp LEFT_ALT  &kp BSPC  &kp DEL    &kp CAPS          &none
-            >;
-        };
-
         L2R_num {
             bindings = <
 &kp LALT    &kp LBRC  &kp PLUS              &kp AMPERSAND  &kp MINUS              &kp RIGHT_BRACE    &kp PRCNT  &JN7    &kp N8  &kp N9  &kp SEMI   &kp RIGHT_ALT
 &kp LCTRL   &kp LBKT  &kp LEFT_PARENTHESIS  &kp EQUAL      &kp RIGHT_PARENTHESIS  &kp RBKT           &kp DLLR   &kp N4  &kp N5  &JN6    &kp N0     &kp RCTRL
 &kp RSHIFT  &kp HASH  &kp ASTRK             &kp CARET      &kp FSLH               &kp EXCL           &kp AT     &kp N1  &JN2    &kp N3  &kp COLON  &kp RSHFT
                                             &kp LEFT_ALT   &kp F15                &kp SPACE          &none      &none
+            >;
+        };
+
+        L3_fun {
+            bindings = <
+&kp LALT   &kp F12  &kp F7  &kp F8        &kp F9    &kp A      &kp LG(UP)        &kp PG_UP  &kp UP    &kp PG_DN  &kp LG(DOWN)       &kp RALT
+&kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &kp A      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
+&kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &kp A      &kp LG(LEFT)      &kp HOME   &trans    &kp END    &kp LG(RIGHT)      &kp RSHFT
+                            &kp LEFT_ALT  &kp BSPC  &kp DEL    &kp CAPS          &none
             >;
         };
 
