@@ -75,6 +75,16 @@
             bindings = <&mo 2>;
             key-positions = <36 37>;
         };
+
+        CO_L4_AltBT {
+            bindings = <&mo 6>;
+            key-positions = <39 40>;
+        };
+
+        CO_L5_APP {
+            bindings = <&mo 7>;
+            key-positions = <37 40>;
+        };
     };
 
     behaviors {
@@ -85,6 +95,16 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ModENT: ModENT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MODENT";
+            bindings = <&kp F14>, <&kp ENTER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RGUI|MOD_RALT)>;
         };
     };
 
@@ -113,10 +133,10 @@
 
         L0.1_mouse_sub {
             bindings = <
-&kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP      &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
-&kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &kp LC(Z)     &kp HOME   &kp LC(N1)  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
-                                    &none       &none      &none            &kp ESC     &kp ENTER
+&kp TAB    &none           &none      &none     &none     &none       &none     &none     &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1  &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &none           &none      &none     &none     &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
+                                      &none     &none     &none       &none     &none
             >;
         };
 
@@ -147,7 +167,7 @@
             >;
         };
 
-        layer_6 {
+        L4_Alt+BT {
             bindings = <
 &trans  &trans  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &trans    &trans  &trans      &trans          &trans  &trans  &trans
 &trans  &trans  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &trans    &trans  &bt BT_NXT  &studio_unlock  &trans  &trans  &trans
@@ -156,7 +176,7 @@
             >;
         };
 
-        layer_7 {
+        L5_APP {
             bindings = <
 &none  &kp LS(LC(LA(Q)))  &kp LS(LC(LA(L)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(COMMA)))  &kp LS(LC(LA(DOT)))      &kp LS(LC(LA(F)))  &kp LS(LC(LA(W)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(Y)))  &kp LS(LC(LA(P)))  &none
 &none  &kp LS(LC(LA(E)))  &kp LS(LC(LA(I)))  &kp LS(LC(LA(A)))  &kp LS(LC(LA(O)))      &kp LS(LC(LA(MINUS)))    &kp LS(LC(LA(K)))  &kp LS(LC(LA(T)))  &kp LS(LC(LA(N)))  &kp LS(LC(LA(S)))  &kp LS(LC(LA(H)))  &none
