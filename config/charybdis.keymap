@@ -85,6 +85,11 @@
             bindings = <&mo 7>;
             key-positions = <37 40>;
         };
+
+        CO_L2L_SCRL {
+            bindings = <&mo 3>;
+            key-positions = <19 21>;
+        };
     };
 
     behaviors {
