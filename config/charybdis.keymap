@@ -1,4 +1,5 @@
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQT          AT                // "
 #define JP_AND          CARET             // &
 #define JP_SQT          AMPERSAND         // '
@@ -24,6 +25,7 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -64,8 +66,13 @@
     combos {
         compatible = "zmk,combos";
 
-        L0_win {
+        CO_gui {
             bindings = <&kp LEFT_WIN>;
+            key-positions = <37 38>;
+        };
+
+        CO_mo_L0.1 {
+            bindings = <&mo 2>;
             key-positions = <36 37>;
         };
     };
@@ -86,10 +93,10 @@
 
         L0 {
             bindings = <
-&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT        &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RALT
-&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND   &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
-&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH       &kp G      &kp D      &kp M  &kp J  &kp B  &kp RSHIFT
-                              &kp LEFT_ALT  &lt 1 F13  &lt 2 SPACE    &lt 3 TAB  &lt 4 F14
+&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT         &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RALT
+&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND    &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH        &kp G      &kp D      &kp M  &kp J  &kp B  &kp RSHIFT
+                          &kp LEFT_ALT  &lt 3 F13  &lt 3 SPACE     &lt 4 TAB  &lt 5 F14
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -104,21 +111,30 @@
             >;
         };
 
+        L0.1_mouse_sub {
+            bindings = <
+&kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP      &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &kp LC(Z)     &kp HOME   &kp LC(N1)  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
+                                    &none       &none      &none            &kp ESC     &kp ENTER
+            >;
+        };
+
         L2L_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND  &kp MINUS    &kp JP_RBRC  &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL  &kp JP_RPRN  &kp JP_RBKT  &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT  &kp FSLH     &kp EXCL     &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                    &studio_unlock  &none                  &none              &kp SPACE  &kp F16
+&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS       &kp JP_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN     &kp JP_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH        &kp EXCL       &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                      &kp LEFT_ALT  &studio_unlock  &none          &kp SPACE  &kp F16
             >;
         };
 
         L2R_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND  &kp MINUS    &kp JP_RBRC  &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL  &kp JP_RPRN  &kp JP_RBKT  &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT  &kp FSLH     &kp EXCL     &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                    &kp LEFT_ALT   &kp F15                &kp SPACE          &none      &none
+&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS    &kp JP_RBRC    &kp PRCNT  &kp N7  &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN  &kp JP_RBKT    &kp DLLR   &kp N4  &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH     &kp EXCL       &kp JP_AT  &kp N1  &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                      &kp LEFT_ALT  &kp F15      &kp SPACE      &none      &none
             >;
         };
 
@@ -128,6 +144,24 @@
 &kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &kp A      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
 &kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &kp A      &kp LG(LEFT)      &kp HOME   &trans    &kp END    &kp LG(RIGHT)      &kp RSHFT
                             &kp LEFT_ALT  &kp BSPC  &kp DEL    &kp CAPS          &none
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &trans    &trans  &trans      &trans          &trans  &trans  &trans
+&trans  &trans  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &trans    &trans  &bt BT_NXT  &studio_unlock  &trans  &trans  &trans
+&trans  &trans  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &trans    &trans  &trans      &trans          &trans  &trans  &trans
+                            &trans      &trans      &trans    &trans  &trans
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&none  &kp LS(LC(LA(Q)))  &kp LS(LC(LA(L)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(COMMA)))  &kp LS(LC(LA(DOT)))      &kp LS(LC(LA(F)))  &kp LS(LC(LA(W)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(Y)))  &kp LS(LC(LA(P)))  &none
+&none  &kp LS(LC(LA(E)))  &kp LS(LC(LA(I)))  &kp LS(LC(LA(A)))  &kp LS(LC(LA(O)))      &kp LS(LC(LA(MINUS)))    &kp LS(LC(LA(K)))  &kp LS(LC(LA(T)))  &kp LS(LC(LA(N)))  &kp LS(LC(LA(S)))  &kp LS(LC(LA(H)))  &none
+&none  &kp LS(LC(LA(Z)))  &kp LS(LC(LA(X)))  &kp LS(LC(LA(C)))  &kp LS(LC(LA(V)))      &kp LS(LC(LA(FSLH)))     &kp LS(LC(LA(G)))  &kp LS(LC(LA(D)))  &kp LS(LC(LA(M)))  &kp LS(LC(LA(J)))  &kp LS(LC(LA(B)))  &none
+                                             &none              &none                  &none                    &none              &none
             >;
         };
 
