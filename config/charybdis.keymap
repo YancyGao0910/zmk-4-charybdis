@@ -118,10 +118,10 @@
 
         L0 {
             bindings = <
-&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT         &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RALT
-&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND    &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
-&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH        &kp G      &kp D      &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt 3 F13  &lt 3 SPACE     &lt 4 TAB  &lt 5 F14
+&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT         &kp F      &kp W    &kp R  &kp Y  &kp P  &kp RALT
+&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND    &kp K      &kp T    &kp N  &kp S  &kp H  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH        &kp G      &kp D    &kp M  &kp J  &kp B  &kp RSHIFT
+                          &kp LEFT_ALT  &lt 3 F13  &lt 3 SPACE     &lt 4 TAB  &ModENT
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
