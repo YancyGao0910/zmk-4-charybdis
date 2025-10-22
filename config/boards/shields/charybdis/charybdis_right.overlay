@@ -19,6 +19,7 @@
 		, <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
+};
 
 // trackball bus
 &pinctrl {
