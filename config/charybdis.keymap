@@ -68,12 +68,12 @@
 
         CO_gui {
             bindings = <&kp LEFT_WIN>;
-            key-positions = <37 38>;
+            key-positions = <37 36>;
         };
 
         CO_mo_L0.1 {
             bindings = <&mo 2>;
-            key-positions = <36 37>;
+            key-positions = <37 38>;
         };
 
         CO_L4_AltBT {
@@ -81,14 +81,24 @@
             key-positions = <39 40>;
         };
 
-        CO_L5_APP {
-            bindings = <&mo 7>;
-            key-positions = <37 40>;
+        CO_CtrlAtlShift {
+            bindings = <&kp LS(LA(LCTRL))>;
+            key-positions = <36 40>;
         };
 
         CO_L2L_SCRL {
             bindings = <&mo 3>;
             key-positions = <19 21>;
+        };
+
+        CO_Shift {
+            bindings = <&kp LSHIFT>;
+            key-positions = <40 37>;
+        };
+
+        CO_Ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <39 38>;
         };
     };
 
@@ -108,10 +118,10 @@
 
         L0 {
             bindings = <
-&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT         &kp F      &kp W        &kp R  &kp Y  &kp P  &kp RALT
-&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND    &kp K      &kp T        &kp N  &kp S  &kp H  &kp RCTRL
-&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH        &kp G      &kp D        &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt 1 F13  &lt 3 SPACE     &lt 4 TAB  &lt 5 ENTER
+&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA  &kp DOT         &kp F      &kp W      &kp R  &kp Y  &kp P  &kp RALT
+&kp LCTRL   &kp E  &kp I  &kp A         &kp O      &JN_SMIN2UND    &kp K      &kp T      &kp N  &kp S  &kp H  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V      &kp FSLH        &kp G      &kp D      &kp M  &kp J  &kp B  &kp RSHIFT
+                          &kp LEFT_ALT  &lt 1 F13  &lt 3 SPACE     &lt 4 TAB  &lt 5 F14
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -164,19 +174,10 @@
 
         L4_Alt+BT {
             bindings = <
-&trans  &trans  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &trans    &trans  &trans      &trans          &trans  &trans  &trans
-&trans  &trans  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &trans    &trans  &bt BT_NXT  &studio_unlock  &trans  &trans  &trans
-&trans  &trans  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &trans    &trans  &trans      &trans          &trans  &trans  &trans
-                            &trans      &trans      &trans    &trans  &trans
-            >;
-        };
-
-        L5_APP {
-            bindings = <
-&none  &kp LS(LC(LA(Q)))  &kp LS(LC(LA(L)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(COMMA)))  &kp LS(LC(LA(DOT)))      &kp LS(LC(LA(F)))  &kp LS(LC(LA(W)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(Y)))  &kp LS(LC(LA(P)))  &none
-&none  &kp LS(LC(LA(E)))  &kp LS(LC(LA(I)))  &kp LS(LC(LA(A)))  &kp LS(LC(LA(O)))      &kp LS(LC(LA(MINUS)))    &kp LS(LC(LA(K)))  &kp LS(LC(LA(T)))  &kp LS(LC(LA(N)))  &kp LS(LC(LA(S)))  &kp LS(LC(LA(H)))  &none
-&none  &kp LS(LC(LA(Z)))  &kp LS(LC(LA(X)))  &kp LS(LC(LA(C)))  &kp LS(LC(LA(V)))      &kp LS(LC(LA(FSLH)))     &kp LS(LC(LA(G)))  &kp LS(LC(LA(D)))  &kp LS(LC(LA(M)))  &kp LS(LC(LA(J)))  &kp LS(LC(LA(B)))  &none
-                                             &none              &none                  &none                    &none              &none
+&none  &none  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &none  &none       &none           &none  &none  &none
+&none  &none  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &none  &bt BT_NXT  &studio_unlock  &none  &none  &none
+&none  &none  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none  &none       &none           &none  &none  &none
+                          &none       &none       &none    &none  &none
             >;
         };
 
