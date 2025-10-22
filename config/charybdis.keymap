@@ -126,6 +126,27 @@
             flavor = "tap-preferred";
             bindings = <&mo &mod_enter>;
         };
+
+        mod_BS: custom_mod_BS {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_BS";
+            #binding-cells = <0>;
+            bindings = <&kp F13 &kp BS &kp BS &kp BS>;
+            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
+            keep-mods = <1>;
+        };
+
+        lt_mod_BS: layer_tap_mod_BS {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_MOD_BS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo &mod_BS>;
+        };
+
+
     };
 
     keymap {
