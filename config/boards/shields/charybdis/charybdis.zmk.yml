@@ -7,7 +7,6 @@ requires: [pro_micro]
 features:
   - keys
   - pointer
-  - underglow
 siblings:
   - charybdis_left
   - charybdis_right
