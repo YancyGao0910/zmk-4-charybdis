@@ -124,7 +124,8 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo 5 &mod_enter>;
+            bindings = <&mo &mod_enter>;
+            layer = <5>;
         };
     };
 
