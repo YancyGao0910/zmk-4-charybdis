@@ -37,25 +37,25 @@
 
 / {
     macros {
-        MA_Alt09: MA_Alt01 {
+        MA_Alt09: MA_Alt09 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp N0 &kp N9>;
-            label = "MA_ALT01";
+            label = "MA_Alt09";
         };
 
-        MA_Alt08: new_macro {
+        MA_Alt08: MA_Alt08 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp N0 &kp N8>;
-            label = "NEW_MACRO";
+            label = "MA_Alt08";
         };
 
-        MA_Alt07: new_macro {
+        MA_Alt07: MA_Alt07 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp N0 &kp N7>;
-            label = "NEW_MACRO";
+            label = "MA_Alt07";
         };
     };
 
@@ -112,10 +112,14 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_ENTER";
             #binding-cells = <0>;
+
             # bindings順に通常, shift, ctrl, altそれぞれのキーを指定
+
             bindings = <&kp F14>, <&kp ENTER>, <&kp ENTER>, <&kp ENTER>;
+
             mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
-            keep-mods = <1>;  
+            keep-mods = <1>;
+
             # 修飾キーを保持して送信
         };
 
