@@ -107,6 +107,27 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mod_enter: custom_mod_enter {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_ENTER";
+            #binding-cells = <0>;
+            # bindings順に通常, shift, ctrl, altそれぞれのキーを指定
+            bindings = <&kp F14>, <&kp ENTER>, <&kp ENTER>, <&kp ENTER>;
+            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
+            keep-mods = <1>;  
+            # 修飾キーを保持して送信
+        };
+
+        lt_mod_enter: layer_tap_mod_enter {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_MOD_ENTER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo 5>, <&mod_enter>;
+        };
     };
 
     keymap {
