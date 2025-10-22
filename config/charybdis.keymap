@@ -131,7 +131,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_BS";
             #binding-cells = <0>;
-            bindings = <&kp F13 &kp BS &kp BS &kp BS>;
+            bindings = <&kp F13 &kp BSPC &kp BSPC &kp BSPC>;
             mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
             keep-mods = <1>;
         };
