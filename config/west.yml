@@ -1,12 +1,12 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: YancyGao0910
+      url-base: https://github.com/YancyGao0910
     - name: DoctorWangWang
       url-base: https://github.com/DoctorWangWang
   projects:
-    - name: zmk
-      remote: zmkfirmware
+    - name: zmkfirmware
+      remote: YancyGao0910
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
