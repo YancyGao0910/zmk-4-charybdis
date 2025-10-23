@@ -228,9 +228,9 @@
 
         L4_Alt+BT {
             bindings = <
-&none  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &none         &studio_unlock  &none         &none         &none         &none
-&none  &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &bt BT_SEL 4  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
-&none  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none         &none           &none         &none         &none         &none
+&none  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &none         &bt BT_CLR    &none         &none         &none         &none
+&none  &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+&none  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none         &none         &none         &none         &none         &none
                               &none       &none       &none    &none         &none
             >;
         };
