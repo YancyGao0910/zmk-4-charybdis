@@ -5,6 +5,7 @@
  */
 
 #include "charybdis.dtsi"
+#include "charybdis-layouts.dtsi"
 
 &kscan0 {
 	col-gpios
