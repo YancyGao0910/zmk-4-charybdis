@@ -108,23 +108,23 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mod_enter: custom_mod_enter {
+        mod_EN: custom_mod_enter {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_ENTER";
             #binding-cells = <0>;
             bindings = <&kp F14 &kp ENTER &kp ENTER &kp ENTER>;
-            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
-            keep-mods = <1>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+            keep-mods = <(1|MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        lt_mod_enter: layer_tap_mod_enter {
+        lt_F14_ModEN: layer_tap_mod_enter {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_MOD_ENTER";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo &mod_enter>;
+            bindings = <&mo>, <&mod_EN>;
         };
 
         mod_BS: custom_mod_BS {
@@ -132,18 +132,29 @@
             label = "MOD_BS";
             #binding-cells = <0>;
             bindings = <&kp F13 &kp BSPC &kp BSPC &kp BSPC>;
-            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL | MOD_LALT | MOD_RALT)>;
-            keep-mods = <1>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_LALT|MOD_RALT|MOD_RCTL)>;
+            keep-mods = <(1|MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        lt_mod_BS: layer_tap_mod_BS {
+        lt_F13_ModBS: layer_tap_mod_BS {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_MOD_BS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <98>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo &mod_BS>;
+        };
+
+        lt_150_100: lt_150_100 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_150_100";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
         };
     };
 
@@ -152,10 +163,10 @@
 
         L0 {
             bindings = <
-&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA       &kp DOT         &kp F      &kp W              &kp R  &kp Y  &kp P  &kp RALT
-&kp LCTRL   &kp E  &kp I  &kp A         &kp O           &JN_SMIN2UND    &kp K      &kp T              &kp N  &kp S  &kp H  &kp RCTRL
-&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V           &kp FSLH        &kp G      &kp D              &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt_mod_BS 1 0  &lt 3 SPACE     &lt 4 TAB  &lt_mod_enter 5 0
+&kp TAB     &kp Q  &kp L  &kp U         &kp COMMA          &kp DOT                &kp F              &kp W              &kp R  &kp Y  &kp P  &kp RALT
+&kp LCTRL   &kp E  &kp I  &kp A         &kp O              &JN_SMIN2UND           &kp K              &kp T              &kp N  &kp S  &kp H  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C         &kp V              &kp FSLH               &kp G              &kp D              &kp M  &kp J  &kp B  &kp RSHIFT
+                          &kp LEFT_ALT  &lt_F13_ModBS 1 0  &lt_150_100 3 SPACE    &lt_150_100 4 TAB  &lt_F14_ModEN 5 0
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
