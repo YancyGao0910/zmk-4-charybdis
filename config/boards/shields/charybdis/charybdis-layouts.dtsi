@@ -3,10 +3,16 @@
         zmk,physical-layout = &charybdis_physical_layout;
     };
 
+    key_physical_attrs: key_physical_attrs {
+        compatible = "zmk,key-physical-attrs";
+        width = <100>;
+        height = <100>;
+    };
+
     charybdis_physical_layout: charybdis_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "default transform";
-		transform = <&default_transform>;
+        transform = <&default_transform>;
         kscan = <&kscan0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
@@ -52,5 +58,5 @@
             , <&key_physical_attrs 100 100  700  300       0     0     0>
             , <&key_physical_attrs 100 100  800  300       0     0     0>
             ;
-        };
+    };
 };
