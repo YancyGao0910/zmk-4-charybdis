@@ -192,10 +192,10 @@
 
         L0.1_mouse_sub {
             bindings = <
-&kp TAB    &none           &none      &none     &none     &none       &none     &none     &none     &none      &none            &kp RALT
-&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1  &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &none           &none      &none     &none     &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
-                                      &none     &none     &none       &none     &none
+&kp TAB    &none           &none      &none     &studio_unlock  &none       &none     &none     &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1        &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &none           &none      &none     &none           &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
+                                      &none     &none           &none       &none     &none
             >;
         };
 
