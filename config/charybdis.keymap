@@ -89,12 +89,12 @@
 
         CO_Shift {
             bindings = <&kp LSHIFT>;
-            key-positions = <40 37>;
+            key-positions = <37 39>;
         };
 
         CO_Ctrl {
             bindings = <&kp LCTRL>;
-            key-positions = <39 38>;
+            key-positions = <38 40>;
         };
     };
 
