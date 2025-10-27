@@ -184,7 +184,7 @@
             label = "CM_BTn2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL0>, <&to 0>;
+            bindings = <&bt BT_SEL0>, <&to 1>;
         };
     };
 
