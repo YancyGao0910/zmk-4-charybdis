@@ -68,12 +68,12 @@
         };
 
         CO_mo_L0.1 {
-            bindings = <&mo 2>;
+            bindings = <&mo 9>;
             key-positions = <37 38>;
         };
 
         CO_L4_AltBT {
-            bindings = <&mo 6>;
+            bindings = <&mo 8>;
             key-positions = <39 40>;
         };
 
@@ -83,7 +83,7 @@
         };
 
         CO_L2L_SCRL {
-            bindings = <&mo 3>;
+            bindings = <&mo 4>;
             key-positions = <19 21>;
         };
 
@@ -98,10 +98,10 @@
         };
 
         CO_L1_Mouse {
-            bindings = <&sl 1>;
+            bindings = <&sl 2>;
             key-positions = <19 22>;
             require-prior-idle-ms = <0>;
-            layers = <1>;
+            layers = <2>;
         };
     };
 
@@ -170,18 +170,31 @@
     keymap {
         compatible = "zmk,keymap";
 
-        L0 {
+        L0-0 {
             bindings = <
 &kp TAB     &kp Q  &kp L  &kp U         &kp COMMA         &kp DOT                &kp F              &kp W             &kp R  &kp Y  &kp P  &kp RALT
 &kp LCTRL   &kp E  &kp I  &kp A         &kp O             &JN_SMIN2UND           &kp K              &kp T             &kp N  &kp S  &kp H  &kp RCTRL
 &kp LSHIFT  &kp Z  &kp X  &kp C         &kp V             &kp FSLH               &kp G              &kp D             &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt_EN_ModBS 1 0  &lt_150_100 3 SPACE    &lt_150_100 4 TAB  &lt_JP_ModEN 5 0
+                          &kp LEFT_ALT  &lt_EN_ModBS 2 0  &lt_150_100 4 SPACE    &lt_150_100 4 TAB  &lt_JP_ModEN 7 0
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        L1_mouse {
+        L0-1 {
+            bindings = <
+&kp TAB     &kp Q  &kp W  &kp E     &kp R     &kp T                  &kp Y              &kp U             &kp I      &kp O    &kp P     &kp AT
+&kp LCTRL   &kp A  &kp S  &kp D     &kp F     &kp G                  &kp H              &kp J             &kp K      &kp L    &kp SEMI  &kp COLON
+&kp LSHIFT  &kp Z  &kp X  &kp C     &kp V     &kp B                  &kp N              &kp M             &kp COMMA  &kp DOT  &kp FSLH  &kp INT1
+                          &kp BSLH  &kp BSPC  &lt_150_100 4 SPACE    &lt_150_100 4 TAB  &lt_JP_ModEN 7 0
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp PG_UP PG_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        L1-0_mouse {
             bindings = <
 &kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
 &kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
@@ -190,30 +203,39 @@
             >;
         };
 
-        L0.1_mouse_sub {
+        L1-1_mouse {
             bindings = <
-&kp TAB    &none           &none      &none     &studio_unlock  &none       &none     &none     &none     &none      &none            &kp RALT
-&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1        &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &none           &none      &none     &none           &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
-                                      &none     &none           &none       &none     &none
+&kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &kp LC(Z)     &kp HOME   &MA_Alt09  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
+                                    &kp RALT   &none      &none            &kp ESC     &kp ENTER
             >;
         };
 
-        L2L_num {
+        L2-0_num {
             bindings = <
 &kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS    &kp JP_RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI    &kp RALT
 &kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN  &kp JP_RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0      &kp RCTRL
 &kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH     &kp EXCL       &kp JP_AT  &kp N1          &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                      &kp LEFT_ALT  &none        &none          &kp SPACE  &kp INT_HENKAN
+                                      &kp LEFT_ALT  &kp INT5     &kp CAPS       &kp SPACE  &kp INT_HENKAN
             >;
         };
 
-        L2R_num {
+        L2-1_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS         &kp JP_RBRC    &kp PRCNT  &kp N7  &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN       &kp JP_RBKT    &kp DLLR   &kp N4  &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH          &kp EXCL       &kp JP_AT  &kp N1  &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                      &kp LEFT_ALT  &kp INT_MUHENKAN  &kp CAPS       &none      &none
+&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS    &kp JP_RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN  &kp JP_RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH     &kp EXCL       &kp JP_AT  &kp N1          &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                      &kp LEFT_ALT  &kp INT5     &kp CAPS       &kp SPACE  &kp INT_HENKAN
+            >;
+        };
+
+        L2-2_num {
+            bindings = <
+&kp LALT    &kp LBRC  &kp PLUS   &kp AMPS      &kp MINUS  &kp RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI   &kp RALT
+&kp LCTRL   &kp LBKT  &kp LPAR   &kp EQUAL     &kp RPAR   &kp RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0     &kp RCTRL
+&kp RSHIFT  &kp HASH  &kp ASTRK  &kp CARET     &kp FSLH   &kp EXCL    &kp AT     &kp N1          &kp N2  &kp N3  &kp COLON  &kp RSHFT
+                                 &kp LEFT_ALT  &kp INT5   &kp CAPS    &kp SPACE  &kp INT_HENKAN
             >;
         };
 
@@ -228,10 +250,19 @@
 
         L4_Alt+BT {
             bindings = <
-&none  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &none         &bt BT_CLR    &none         &none         &none         &none
+&none  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &none
 &none  &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
 &none  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none         &none         &none         &none         &none         &none
                               &none       &none       &none    &none         &none
+            >;
+        };
+
+        L5_mouse_sub {
+            bindings = <
+&kp TAB    &none           &none      &none     &studio_unlock  &none       &none     &none     &none     &none      &none            &kp RALT
+&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1        &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &none           &none      &none     &none           &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
+                                      &none     &none           &none       &none     &none
             >;
         };
 
