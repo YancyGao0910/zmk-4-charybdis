@@ -184,7 +184,10 @@
             compatible = "zmk,behavior-macro";
             label = "bt_layer_switch";
             #binding-cells = <0>;
-            bindings = <&bt_sel>, <&to>;
+            bindings = <&bt_sel1 &to 1>;
+        };
+    };
+
         };
     };
 4 
