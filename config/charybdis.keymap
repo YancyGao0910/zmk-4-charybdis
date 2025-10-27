@@ -180,9 +180,9 @@
             quick-tap-ms = <100>;
         };
 
-        macro4_bt_layer_switch {
+        BnT: BnT {
             compatible = "zmk,behavior-macro";
-            label = "bt_layer_switch";
+            label = "BnT";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL>, <&to>;
         };
