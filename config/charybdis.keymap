@@ -179,6 +179,13 @@
             tapping-term-ms = <150>;
             quick-tap-ms = <100>;
         };
+
+        CM_BTn2: CM_BTn2 {
+            label = "CM_BTn2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL0>, <&to WIN>;
+        };
     };
 
     keymap {
