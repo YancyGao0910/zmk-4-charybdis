@@ -100,7 +100,7 @@
         JN_SMIN2UND: JN_SMIN2UND {
             compatible = "zmk,behavior-mod-morph";
             label = "JN_SMIN2UND";
-            bindings = <&kp MINUS>, <&kp JP_UND>;
+            bindings = <&kp MINUS>, <&kp LS(0x87)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
