@@ -395,18 +395,18 @@
 
         L2-1_num {
             bindings = <
-&kp TAB     &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp TAB     &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp G       &MA_ahk_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
 &kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
-&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_ahk_AT  &kp N1   &kp N2  &kp N3  &MA_ahk_COLON    &kp RSHFT
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp B       &kp EXCL        &MA_ahk_AT  &kp N1   &kp N2  &kp N3  &MA_ahk_COLON    &kp RSHFT
                                               &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
             >;
         };
 
         L2-2_num {
             bindings = <
-&kp TAB     &MA_ahkReg_LBRC  &MA_Reg_PLUS     &kp LS(N6)       &kp MINUS   &MA_Reg_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp TAB     &MA_ahkReg_LBRC  &MA_Reg_PLUS     &kp LS(N6)       &kp G       &MA_Reg_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
 &kp LCTRL   &MA_Reg_LBKT     &kp LS(N8)       &MA_Reg_EQL      &kp LS(N9)  &MA_Reg_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
-&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_Reg_AT  &kp N1   &kp N2  &kp N3  &MA_Reg_COLON    &kp RSHFT
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp B       &kp EXCL        &MA_Reg_AT  &kp N1   &kp N2  &kp N3  &MA_Reg_COLON    &kp RSHFT
                                               &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
             >;
         };
