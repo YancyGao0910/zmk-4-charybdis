@@ -443,7 +443,7 @@
             bindings = <
 &kp LALT   &kp F12  &kp F7  &kp F8        &kp F9    &none      &kp LG(UP)        &kp PG_UP  &kp UP     &kp PG_DN  &kp LG(DOWN)       &kp RALT
 &kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &none      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
-&kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &none      &kp LG(LEFT)      &kp HOME   &MA_Alt09  &kp END    &kp LG(RIGHT)      &kp RSHFT
+&kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &none      &kp LG(LEFT)      &kp HOME   &kp K_APP  &kp END    &kp LG(RIGHT)      &kp RSHFT
                             &kp LEFT_ALT  &kp BSPC  &kp DEL    &none             &none
             >;
         };
