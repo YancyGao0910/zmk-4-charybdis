@@ -42,7 +42,7 @@
         MA_ahk_RBKT: MA_ahk_RBKT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk SPACE &kp F>;
+            bindings = <&sk SPACE &kp G>;
             label = "MA_AHK_RBKT";
         };
     };
