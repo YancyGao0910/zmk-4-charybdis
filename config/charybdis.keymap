@@ -388,7 +388,7 @@
             bindings = <
 &kp TAB     &kp RBRC  &kp COLON  &kp CARET     &kp MINUS  &kp PIPE         &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI  &kp RALT
 &kp LCTRL   &kp RBKT  &kp ASTRK  &kp UNDER     &kp LPAR   &kp BACKSLASH    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0    &kp RCTRL
-&kp RSHIFT  &kp HASH  &kp DQT    &kp EQUAL     &kp FSLH   &kp EXCL         &kp LBRC   &kp N1          &kp N2  &kp N3  &kp SQT   &kp RSHFT
+&kp RSHIFT  &kp HASH  &kp DQT    &kp EQUAL     &kp FSLH   &kp EXCL         &kp LBKT   &kp N1          &kp N2  &kp N3  &kp SQT   &kp RSHFT
                                  &kp LEFT_ALT  &kp INT5   &kp LS(CAPS)     &kp SPACE  &kp INT_HENKAN
             >;
         };
