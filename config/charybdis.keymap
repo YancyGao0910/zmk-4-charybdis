@@ -205,7 +205,7 @@
         BnT_3n0: BnT_3n0 {
             compatible = "zmk,behavior-macro";
             label = "BNT_3N0";
-          4  #binding-cells = <0>;
+            #binding-cells = <0>;
             bindings = <&bt BT_SEL 3 &to 0>;
         };
 
