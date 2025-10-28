@@ -201,7 +201,7 @@
             bindings = <&bt BT_SEL 0 &to 1>;
         };
 
-        MA_ahk_LBKT: MA_ahk_LBKT {
+        MA_ahk_AT: MA_ahk_LBKT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&sk SPACE &kp N>;
@@ -278,10 +278,10 @@
 
         L2-1_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS    &kp JP_AND    &kp MINUS     &kp JP_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &MA_ahk_LBKT  &kp JP_EQL    &MA_ahk_RBKT  &kp JP_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST    &kp JP_CRT    &kp FSLH      &kp EXCL       &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                       &kp LEFT_ALT  &kp F15       &kp CAPS       &kp SPACE  &kp F16
+&kp LALT    &kp JP_LBRC  &kp JP_PLS  &kp JP_AND    &kp MINUS     &kp JP_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &kp JP_LBKT  &MA_ahk_AT  &kp JP_EQL    &MA_ahk_RBKT  &kp JP_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH     &kp JP_AST  &kp JP_CRT    &kp FSLH      &kp EXCL       &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                     &kp LEFT_ALT  &kp F15       &kp CAPS       &kp SPACE  &kp F16
             >;
         };
 
