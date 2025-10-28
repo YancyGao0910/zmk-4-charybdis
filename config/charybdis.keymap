@@ -386,7 +386,7 @@
 
         L2-0_num {
             bindings = <
-&kp LALT    &kp RBRC  &kp COLON  &kp CARET     &kp MINUS  &kp PIPE         &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI  &kp RALT
+&kp TAB     &kp RBRC  &kp COLON  &kp CARET     &kp MINUS  &kp PIPE         &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI  &kp RALT
 &kp LCTRL   &kp RBRC  &kp ASTRK  &kp UNDER     &kp LPAR   &kp BACKSLASH    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0    &kp RCTRL
 &kp RSHIFT  &kp HASH  &kp DQT    &kp EQUAL     &kp FSLH   &kp EXCL         &kp LBRC   &kp N1          &kp N2  &kp N3  &kp SQT   &kp RSHFT
                                  &kp LEFT_ALT  &kp INT5   &kp LS(CAPS)     &kp SPACE  &kp INT_HENKAN
@@ -395,7 +395,7 @@
 
         L2-1_num {
             bindings = <
-&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp TAB     &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
 &kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
 &kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_ahk_AT  &kp N1   &kp N2  &kp N3  &MA_ahk_COLON    &kp RSHFT
                                               &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
@@ -404,7 +404,7 @@
 
         L2-2_num {
             bindings = <
-&kp LALT    &MA_ahkReg_LBRC  &MA_Reg_PLUS     &kp LS(N6)       &kp MINUS   &MA_Reg_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp TAB     &MA_ahkReg_LBRC  &MA_Reg_PLUS     &kp LS(N6)       &kp MINUS   &MA_Reg_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
 &kp LCTRL   &MA_Reg_LBKT     &kp LS(N8)       &MA_Reg_EQL      &kp LS(N9)  &MA_Reg_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
 &kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_Reg_AT  &kp N1   &kp N2  &kp N3  &MA_Reg_COLON    &kp RSHFT
                                               &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
@@ -413,7 +413,7 @@
 
         L2-3_num {
             bindings = <
-&kp LALT    &kp LBRC  &kp PLUS   &kp AMPS      &kp MINUS  &kp RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI   &kp RALT
+&kp TAB     &kp LBRC  &kp PLUS   &kp AMPS      &kp MINUS  &kp RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI   &kp RALT
 &kp LCTRL   &kp LBKT  &kp LPAR   &kp EQUAL     &kp RPAR   &kp RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0     &kp RCTRL
 &kp RSHIFT  &kp HASH  &kp ASTRK  &kp CARET     &kp FSLH   &kp EXCL    &kp AT     &kp N1          &kp N2  &kp N3  &kp COLON  &kp RSHFT
                                  &kp LEFT_ALT  &kp INT5   &kp CAPS    &kp SPACE  &kp INT_HENKAN
@@ -422,7 +422,7 @@
 
         L3_fun {
             bindings = <
-&kp LALT   &kp F12  &kp F7  &kp F8        &kp F9    &none      &kp LG(UP)        &kp PG_UP  &kp UP     &kp PG_DN  &kp LG(DOWN)       &kp RALT
+&kp TAB    &kp F12  &kp F7  &kp F8        &kp F9    &none      &kp LG(UP)        &kp PG_UP  &kp UP     &kp PG_DN  &kp LG(DOWN)       &kp RALT
 &kp LCTRL  &kp F11  &kp F4  &kp F5        &kp F6    &none      &kp LG(LS(LEFT))  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LG(LS(RIGHT))  &kp RCTRL
 &kp LSHFT  &kp F10  &kp F1  &kp F2        &kp F3    &none      &kp LG(LEFT)      &kp HOME   &kp K_APP  &kp END    &kp LG(RIGHT)      &kp RSHFT
                             &kp LEFT_ALT  &kp BSPC  &kp DEL    &none             &none
@@ -431,19 +431,19 @@
 
         L4_Alt+BT {
             bindings = <
-&kp C_VOL_UP  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &bt BT_CLR  &to 0     &to 1     &to 2     &to 3     &kp C_BRI_UP
-&kp C_MUTE    &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &to 0       &BnT_0n0  &BnT_1n0  &BnT_2n0  &BnT_3n0  &none
-&kp C_VOL_DN  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &BnT_0n1  &BnT_1n2  &none     &none     &kp C_BRI_DN
-                                     &to 1       &to 2       &to 3    &none       &none
+&kp TAB    &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &bt BT_CLR  &to 0     &to 1     &to 2     &to 3     &kp RALT
+&kp LCTRL  &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &to 0       &BnT_0n0  &BnT_1n0  &BnT_2n0  &BnT_3n0  &kp RCTRL
+&kp LSHFT  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &BnT_0n1  &BnT_1n2  &none     &none     &kp RSHFT
+                                  &none       &none       &none    &none       &none
             >;
         };
 
         L5_mouse_sub {
             bindings = <
-&kp TAB    &none           &none      &none     &studio_unlock  &none       &none     &none     &none     &none      &none            &kp RALT
-&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2  &mkp MB1        &mkp MB5    &mkp MB5  &mkp MB1  &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &none           &none      &none     &none           &mkp MB4    &mkp MB4  &none     &none     &none      &none            &kp RSHFT
-                                      &none     &none           &none       &none     &none
+&kp TAB    &none           &none      &kp C_BRI_DN  &kp C_BRI_UP  &none       &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none      &none            &kp RALT
+&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2      &mkp MB1      &mkp MB5    &mkp MB5    &mkp MB1      &mkp MB2      &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &none           &none      &none         &none         &mkp MB4    &mkp MB4    &none         &none         &none      &none            &kp RSHFT
+                                      &none         &none         &none       &none       &none
             >;
         };
 
