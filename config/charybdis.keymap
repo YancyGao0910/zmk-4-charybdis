@@ -79,6 +79,7 @@
         CO_gui {
             bindings = <&kp LEFT_WIN>;
             key-positions = <37 36>;
+            layers = <0 1 2 3 5 6 7 8>;
         };
 
         CO_mo_L0.1 {
@@ -89,11 +90,13 @@
         CO_L4_AltBT {
             bindings = <&mo 10>;
             key-positions = <39 40>;
+            layers = <0 1 2 3>;
         };
 
         CO_CtrlAtlShift {
             bindings = <&kp LS(LA(LCTRL))>;
             key-positions = <36 40>;
+            layers = <0 1 2 3>;
         };
 
         CO_L2L_SCRL {
@@ -273,6 +276,69 @@
             bindings = <&sk SPACE &kp C>;
             label = "MA_AHKNREG_CRT";
         };
+
+        MA_ahkReg_SEMI: MA_ahkReg_SEMI {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp P>;
+            label = "MA_AHKREG_SEMI";
+        };
+
+        MA_ahk_COLON: MA_ahk_COLON {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp SLASH>;
+            label = "MA_AHK_COLON";
+        };
+
+        MA_Reg_PLUS: MA_Reg_PLUS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp L>;
+            label = "MA_REG_PLUS";
+        };
+
+        MA_Reg_RBRC: MA_Reg_RBRC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp DOT>;
+            label = "MA_REG_RBRC";
+        };
+
+        MA_Reg_LBKT: MA_Reg_LBKT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp E>;
+            label = "MA_REG_LBKT";
+        };
+
+        MA_Reg_RBKT: MA_Reg_RBKT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp MINUS>;
+            label = "MA_REG_RBKT";
+        };
+
+        MA_Reg_EQL: MA_Reg_EQL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp A>;
+            label = "MA_REG_EQL";
+        };
+
+        MA_Reg_AT: MA_Reg_AT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp G>;
+            label = "MA_REG_AT";
+        };
+
+        MA_Reg_COLON: MA_Reg_COLON {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp B>;
+            label = "MA_REG_COLON";
+        };
     };
 
     keymap {
@@ -307,7 +373,7 @@
 &kp TAB     &kp Q  &kp W  &kp E     &kp R             &kp T                  &kp Y              &kp U             &kp I      &kp O    &kp P     &kp RALT
 &kp LCTRL   &kp A  &kp S  &kp D     &kp F             &kp G                  &kp H              &kp J             &kp K      &kp L    &kp SEMI  &kp RCTRL
 &kp LSHIFT  &kp Z  &kp X  &kp C     &kp V             &kp B                  &kp N              &kp M             &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                          &kp LALT  &LT_EN_ModBS 4 0  &LT_150_100 6 SPACE    &LT_150_100 6 TAB  &LT_JP_ModEN 9 0
+                          &kp LALT  &LT_EN_ModBS 4 0  &LT_150_100 7 SPACE    &LT_150_100 7 TAB  &LT_JP_ModEN 9 0
             >;
 
             sensor-bindings =
@@ -339,28 +405,28 @@
 
         L2-0_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS   &kp JP_AND    &kp MINUS    &kp JP_RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &kp JP_LPRN  &kp JP_EQL    &kp JP_RPRN  &kp JP_RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST   &kp JP_CRT    &kp FSLH     &kp EXCL       &kp JP_AT  &kp N1          &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                      &kp LEFT_ALT  &kp INT5     &kp CAPS       &kp SPACE  &kp INT_HENKAN
+&kp LALT    &kp RBRC  &kp COLON  &kp CARET     &kp MINUS  &kp PIPE         &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI  &kp RALT
+&kp LCTRL   &kp RBRC  &kp ASTRK  &kp UNDER     &kp LPAR   &kp BACKSLASH    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0    &kp RCTRL
+&kp RSHIFT  &kp HASH  &kp DQT    &kp EQUAL     &kp FSLH   &kp EXCL         &kp LBRC   &kp N1          &kp N2  &kp N3  &kp SQT   &kp RSHFT
+                                 &kp LEFT_ALT  &kp INT5   &kp LS(CAPS)     &kp SPACE  &kp INT_HENKAN
             >;
         };
 
         L2-1_num {
             bindings = <
-&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                              &kp LEFT_ALT     &kp F15     &kp CAPS        &kp SPACE  &kp F16
+&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_ahk_AT  &kp N1   &kp N2  &kp N3  &MA_ahk_COLON    &kp RSHFT
+                                              &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
             >;
         };
 
         L2-2_num {
             bindings = <
-&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                              &kp LEFT_ALT     &kp F15     &kp CAPS        &kp SPACE  &kp F16
+&kp LALT    &MA_ahkReg_LBRC  &MA_Reg_PLUS     &kp LS(N6)       &kp MINUS   &MA_Reg_RBRC    &kp PRCNT   &kp N7   &kp N8  &kp N9  &MA_ahkReg_SEMI  &kp RALT
+&kp LCTRL   &MA_Reg_LBKT     &kp LS(N8)       &MA_Reg_EQL      &kp LS(N9)  &MA_Reg_RBKT    &kp DLLR    &kp N4   &kp N5  &kp N6  &kp N0           &kp RCTRL
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &MA_Reg_AT  &kp N1   &kp N2  &kp N3  &MA_Reg_COLON    &kp RSHFT
+                                              &kp LEFT_ALT     &kp F15     &kp LS(CAPS)    &kp SPACE   &kp F16
             >;
         };
 
@@ -384,9 +450,9 @@
 
         L4_Alt+BT {
             bindings = <
-&kp C_VOL_UP  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &bt BT_CLR  &to 0     &to 1         &to 2         &to 3         &kp C_BRI_UP
-&kp C_MUTE    &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &none       &BnT_0n0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
-&kp C_VOL_DN  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &to 0     &to 1         &to 3         &to 0         &kp C_BRI_DN
+&kp C_VOL_UP  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &bt BT_CLR  &to 0     &to 1     &to 2     &to 3         &kp C_BRI_UP
+&kp C_MUTE    &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &to 0       &BnT_0n0  &BnT_1n0  &BnT_3n0  &bt BT_SEL 3  &none
+&kp C_VOL_DN  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &BnT_0n1  &BnT_1n2  &none     &none         &kp C_BRI_DN
                                      &none       &none       &none    &none       &none
             >;
         };
