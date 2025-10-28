@@ -82,12 +82,12 @@
         };
 
         CO_mo_L0.1 {
-            bindings = <&mo 10>;
+            bindings = <&mo 11>;
             key-positions = <37 38>;
         };
 
         CO_L4_AltBT {
-            bindings = <&mo 9>;
+            bindings = <&mo 10>;
             key-positions = <39 40>;
         };
 
@@ -112,10 +112,10 @@
         };
 
         CO_L1_Mouse {
-            bindings = <&sl 3>;
+            bindings = <&sl 4>;
             key-positions = <19 22>;
             require-prior-idle-ms = <0>;
-            layers = <3>;
+            layers = <4>;
         };
     };
 
@@ -129,9 +129,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mod_JP_ModEN: custom_mod_enter {
+        MD_JP_ModEN: MD_JP_ModEN {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_ENTER";
+            label = "MD_JP_MODEN";
             #binding-cells = <0>;
             bindings = <&kp LANG1>, <&kp ENTER>, <&kp ENTER>, <&kp ENTER>;
 
@@ -139,19 +139,19 @@
             keep-mods = <(1|MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        lt_JP_ModEN: lt_JP_ModEN {
+        LT_JP_ModEN: LT_JP_ModEN {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_JP_MODEN";
             #binding-cells = <2>;
             tapping-term-ms = <100>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&mod_JP_ModEN>;
+            bindings = <&mo>, <&MD_JP_ModEN>;
         };
 
-        mod_EN_ModBS: custom_mod_BS {
+        MOD_EN_ModBS: MOD_EN_ModBS {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_BS";
+            label = "MOD_EN_ModBS";
             #binding-cells = <0>;
             bindings = <&kp LANG2>, <&kp BSPC>, <&kp BSPC>, <&kp BSPC>;
 
@@ -159,17 +159,17 @@
             keep-mods = <(1|MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        lt_EN_ModBS: layer_tap_mod_BS {
+        LT_EN_ModBS: LT_EN_ModBS {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_MOD_BS";
+            label = "LT_EN_ModBS";
             #binding-cells = <2>;
             tapping-term-ms = <100>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&mod_EN_ModBS>;
+            bindings = <&mo>, <&MOD_EN_ModBS>;
         };
 
-        lt_150_100: lt_150_100 {
+        LT_150_100: LT_150_100 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_150_100";
             bindings = <&mo>, <&kp>;
@@ -180,32 +180,98 @@
             quick-tap-ms = <100>;
         };
 
-        BnT_0n0: BnT {
+        MT_130: MT_130 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_130";
+            bindings = <&mt>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <130>;
+        };
+
+        BnT_0n0: BnT_0n0 {
             compatible = "zmk,behavior-macro";
-            label = "BnT";
+            label = "BnT_0n0";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0 &to 0>;
         };
 
-        BnT_0n1: new_macro {
+        BnT_0n1: BnT_0n1 {
             compatible = "zmk,behavior-macro";
-            label = "NEW_MACRO";
+            label = "BnT_0n1";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0 &to 1>;
         };
 
-        BnT_1n1: BnT_1n1 {
+        BnT_1n0: BnT_1n0 {
             compatible = "zmk,behavior-macro";
-            label = "BNT_1N1";
+            label = "BnT_1n0";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 1>;
+            bindings = <&bt BT_SEL 1 &to 0>;
+        };
+
+        BnT_1n2: BnT_1n2 {
+            compatible = "zmk,behavior-macro";
+            label = "BnT_1n2";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 2>;
+        };
+
+        BnT_3n0: BnT_3n0 {
+            compatible = "zmk,behavior-macro";
+            label = "BNT_3N0";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &to 0>;
         };
 
         MA_ahk_AT: MA_ahk_AT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&sk SPACE &kp N>;
-            label = "MA_ahk_AT";
+            label = "MA_AHK_AT";
+        };
+
+        MA_ahkReg_LBRC: MA_ahk_LBRC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp Q>;
+            label = "MA_AHK_LBRC";
+        };
+
+        MA_ahk_RBRC: MA_ahk_RBRC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp T>;
+            label = "MA_AHK_RBRC";
+        };
+
+        MA_ahk_PLUS: MA_ahk_PLUS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp W>;
+            label = "MA_AHK_PLUS";
+        };
+
+        MA_ahk_EQL: MA_ahk_EQL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp D>;
+            label = "MA_AHK_EQL";
+        };
+
+        MA_ahknReg_AST: MA_ahk_AST {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp X>;
+            label = "MA_AHK_AST";
+        };
+
+        MA_ahknReg_CRT: MA_ahknReg_CRT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk SPACE &kp C>;
+            label = "MA_AHKNREG_CRT";
         };
     };
 
@@ -217,7 +283,7 @@
 &kp TAB     &kp Q  &kp L  &kp U         &kp COMMA         &kp DOT                &kp F              &kp W             &kp R  &kp Y  &kp P  &kp RALT
 &kp LCTRL   &kp E  &kp I  &kp A         &kp O             &JN_SMIN2UND           &kp K              &kp T             &kp N  &kp S  &kp H  &kp RCTRL
 &kp LSHIFT  &kp Z  &kp X  &kp C         &kp V             &kp FSLH               &kp G              &kp D             &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt_EN_ModBS 3 0  &lt_150_100 5 SPACE    &lt_150_100 5 TAB  &lt_JP_ModEN 8 0
+                          &kp LEFT_ALT  &LT_EN_ModBS 4 0  &LT_150_100 5 SPACE    &LT_150_100 5 TAB  &LT_JP_ModEN 9 0
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -228,7 +294,7 @@
 &kp TAB     &kp Q  &kp W  &kp E     &kp R             &kp T                  &kp Y              &kp U             &kp I      &kp O    &kp P     &kp RALT
 &kp LCTRL   &kp A  &kp S  &kp D     &kp F             &kp G                  &kp H              &kp J             &kp K      &kp L    &kp SEMI  &kp RCTRL
 &kp LSHIFT  &kp Z  &kp X  &kp C     &kp V             &kp B                  &kp N              &kp M             &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                          &kp LALT  &lt_EN_ModBS 4 0  &lt_150_100 6 SPACE    &lt_150_100 6 TAB  &lt_JP_ModEN 8 0
+                          &kp LALT  &LT_EN_ModBS 4 0  &LT_150_100 6 SPACE    &LT_150_100 6 TAB  &LT_JP_ModEN 9 0
             >;
 
             sensor-bindings =
@@ -238,10 +304,23 @@
 
         L0-2 {
             bindings = <
+&kp TAB     &kp Q  &kp W  &kp E     &kp R             &kp T                  &kp Y              &kp U             &kp I      &kp O    &kp P     &kp RALT
+&kp LCTRL   &kp A  &kp S  &kp D     &kp F             &kp G                  &kp H              &kp J             &kp K      &kp L    &kp SEMI  &kp RCTRL
+&kp LSHIFT  &kp Z  &kp X  &kp C     &kp V             &kp B                  &kp N              &kp M             &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                          &kp LALT  &LT_EN_ModBS 4 0  &LT_150_100 6 SPACE    &LT_150_100 6 TAB  &LT_JP_ModEN 9 0
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp PG_UP PG_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        L0-3 {
+            bindings = <
 &kp TAB     &kp Q  &kp L  &kp U         &kp COMMA         &kp DOT                &kp F              &kp W             &kp R  &kp Y  &kp P  &kp RALT
 &kp LCTRL   &kp E  &kp I  &kp A         &kp O             &kp MINUS              &kp K              &kp T             &kp N  &kp S  &kp H  &kp RCTRL
 &kp LSHIFT  &kp Z  &kp X  &kp C         &kp V             &kp FSLH               &kp G              &kp D             &kp M  &kp J  &kp B  &kp RSHIFT
-                          &kp LEFT_ALT  &lt_EN_ModBS 3 0  &lt_150_100 7 SPACE    &lt_150_100 7 TAB  &lt_JP_ModEN 8 0
+                          &kp LEFT_ALT  &LT_EN_ModBS 4 0  &LT_150_100 8 SPACE    &LT_150_100 8 TAB  &LT_JP_ModEN 9 0
             >;
 
             sensor-bindings =
@@ -251,16 +330,7 @@
 
         L1-0_mouse {
             bindings = <
-&kp TAB    &kp LC(Y)     &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
-&kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &kp LC(Z)     &kp HOME   &MA_Alt09  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
-                                    &kp RALT   &none      &none            &kp ESC     &kp ENTER
-            >;
-        };
-
-        L1-1_mouse {
-            bindings = <
-&kp TAB    &kp LC(O)     &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
+&kp TAB    &none         &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(LA(V))    &kp LA(UP)  &none      &none     &none      &none            &kp RALT
 &kp LCTRL  &kp LA(DOWN)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp LC(C)        &mkp MB5    &mkp MB1   &mkp MB2  &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
 &kp LSHFT  &kp LC(Z)     &kp HOME   &MA_Alt09  &kp END    &kp LC(V)        &mkp MB4    &none      &none     &none      &none            &kp RSHFT
                                     &kp RALT   &none      &none            &kp ESC     &kp ENTER
@@ -278,14 +348,23 @@
 
         L2-1_num {
             bindings = <
-&kp LALT    &kp JP_LBRC  &kp JP_PLS  &kp JP_AND    &kp MINUS     &kp JP_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
-&kp LCTRL   &kp JP_LBKT  &MA_ahk_AT  &kp JP_EQL    &MA_ahk_RBKT  &kp JP_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
-&kp RSHIFT  &kp HASH     &kp JP_AST  &kp JP_CRT    &kp FSLH      &kp EXCL       &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
-                                     &kp LEFT_ALT  &kp F15       &kp CAPS       &kp SPACE  &kp F16
+&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                              &kp LEFT_ALT     &kp F15     &kp CAPS        &kp SPACE  &kp F16
             >;
         };
 
         L2-2_num {
+            bindings = <
+&kp LALT    &MA_ahkReg_LBRC  &MA_ahk_PLUS     &kp LS(N6)       &kp MINUS   &MA_ahk_RBRC    &kp PRCNT  &kp N7   &kp N8  &kp N9  &kp SEMI    &kp RALT
+&kp LCTRL   &MA_ahk_LBKT     &kp LS(N8)       &MA_ahk_EQL      &kp LS(N9)  &MA_ahk_RBKT    &kp DLLR   &kp N4   &kp N5  &kp N6  &kp N0      &kp RCTRL
+&kp RSHIFT  &kp HASH         &MA_ahknReg_AST  &MA_ahknReg_CRT  &kp FSLH    &kp EXCL        &kp JP_AT  &kp N1   &kp N2  &kp N3  &kp JP_CLN  &kp RSHFT
+                                              &kp LEFT_ALT     &kp F15     &kp CAPS        &kp SPACE  &kp F16
+            >;
+        };
+
+        L2-3_num {
             bindings = <
 &kp LALT    &kp LBRC  &kp PLUS   &kp AMPS      &kp MINUS  &kp RBRC    &kp PRCNT  &kp N7          &kp N8  &kp N9  &kp SEMI   &kp RALT
 &kp LCTRL   &kp LBKT  &kp LPAR   &kp EQUAL     &kp RPAR   &kp RBKT    &kp DLLR   &kp N4          &kp N5  &kp N6  &kp N0     &kp RCTRL
@@ -305,10 +384,10 @@
 
         L4_Alt+BT {
             bindings = <
-&none  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &none
-&none  &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &bt BT_CLR  &BnT_0n0      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &to 0         &to 1         &to 2         &to 0         &to 0
-                              &none       &none       &none    &none       &none
+&kp C_VOL_UP  &MA_Alt07  &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  &none    &bt BT_CLR  &to 0     &to 1         &to 2         &to 3         &kp C_BRI_UP
+&kp C_MUTE    &MA_Alt08  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  &none    &none       &BnT_0n0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+&kp C_VOL_DN  &MA_Alt09  &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  &none    &none       &to 0     &to 1         &to 3         &to 0         &kp C_BRI_DN
+                                     &none       &none       &none    &none       &none
             >;
         };
 
