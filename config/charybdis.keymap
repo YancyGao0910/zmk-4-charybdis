@@ -440,10 +440,10 @@
 
         L5_mouse_sub {
             bindings = <
-&kp TAB    &none           &none      &kp C_BRI_DN  &kp C_BRI_UP  &none       &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none      &none            &kp RALT
-&kp LCTRL  &kp LA(LSHIFT)  &kp LCTRL  &mkp MB2      &mkp MB1      &mkp MB5    &mkp MB5    &mkp MB1      &mkp MB2      &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
-&kp LSHFT  &none           &none      &none         &none         &mkp MB4    &mkp MB4    &none         &none         &none      &none            &kp RSHFT
-                                      &none         &none         &none       &none       &none
+&kp TAB    &none       &none      &kp C_BRI_DN  &kp C_BRI_UP  &none       &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none      &none            &kp RALT
+&kp LCTRL  &kp LSHIFT  &kp LCTRL  &mkp MB2      &mkp MB1      &mkp MB5    &mkp MB5    &mkp MB1      &mkp MB2      &kp RCTRL  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LSHFT  &none       &none      &none         &none         &mkp MB4    &mkp MB4    &none         &none         &none      &none            &kp RSHFT
+                                  &kp LALT      &none         &none       &none       &none
             >;
         };
 
